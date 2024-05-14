@@ -37,3 +37,12 @@
   - Standard IA is Standard Infrequent Access. no perf difference?
   - TTL is free. You'd have to manage it yourself in a traditional RDBMS
   - Multi table could be per month. Current month will have large write workload, will be hot
+  - Remember - Access pattern matters a lot
+
+## Main Dish - Is on demand load unlimited
+
+- I created a table ousing on demand mode. A new large scale service will open next week, am I safe now?
+  - Unlimited throughput. Base is 4000 write request units (4000 writes pr second), 12000 read request units (24000 eventually consistent reads).
+  - Should consider account limits on maximum capacity.
+  - Need 1M WCU/RCU, make sure you pre warm.
+  - Can pre warm table to handle partition splitting better.
