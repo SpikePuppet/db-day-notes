@@ -46,3 +46,12 @@
   - Should consider account limits on maximum capacity.
   - Need 1M WCU/RCU, make sure you pre warm.
   - Can pre warm table to handle partition splitting better.
+
+## Desert
+
+- I have PITR on a large table, someone ran a bad bulk job Monday at noon that deleted important items. How can I recover?
+  - Is there anything better than a full table restore at 11:50AM?
+  - DynamoDB streams can help, but what if we need to just restore a few items.
+  - Don't do a restore - do an export
+  - Don't do a full export
+  - Consider incremental export from 11:30 AM to 12:30PM that puts on disk the OldImage and NewImage of all modified items.
