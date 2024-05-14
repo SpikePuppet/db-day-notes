@@ -56,3 +56,18 @@
 - Can add replicas which are different sizes or even serverless
 - Can specify the order to failover to support this. Called Tiers.
 - Tier 0 is the first, exhaust all then move to 1, etc
+- Introduce endpoints - reader and writer. Specify what'll serve it up, and then you just hit the endpoints.
+- Writer endpoint fails in this config, we reconect and DNS handles the rest giving you a new head instance.
+- Connection management - Do connection pooling, per db instance and type. Avoids reconnection.
+- EFM plugin gives data about cluster which will let JDBC reconnect as appropriate - sure this is in other drivers as well.
+- aws-advances-jdbc-wrapper
+- Works best for persistent connections
+- Can use RDS proxy to help here - manages pooling/limits/everything else in a persistent managed layer.
+
+# Global Resilience
+
+- Can copy snapshots from one S3 bucket to another in another region to replicate it
+- Storage only - can setup async replication across regions. It's pushed from origin region to other replicated region. Lag usually less than a second which is good.
+- Can kick off failover, use --allow-data-loss
+- Switchover - failover except something not wrong
+- Can have up to 5 secondary regions
