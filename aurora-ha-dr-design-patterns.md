@@ -19,3 +19,6 @@
 - One AZ fails - no impact on storage
 - Writes make 6 copies, and wait for 4 acknowledgements to come back to say it's done
 - Reads - as long as there's three copies across AZ's you're good
+
+- Just write log records - just instructions on how to change the database (high level idea). That's what gets written.
+- Storage understands these records, so it knows what to do with it
