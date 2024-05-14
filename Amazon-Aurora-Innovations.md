@@ -65,3 +65,9 @@
 
 - When you create an instance an EBS store gets associated with it for ephemeral storage
 - Tiered caching with optimised memory (if you use disk based compute instances)
+- Vectore perf crazy high with tiered caching
+
+# Aurora Limitless Database
+
+- Typically up object size, count or query volume
+- You'd vertically scale, replicate for horizontal scaling, sharding
