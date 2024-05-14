@@ -71,3 +71,4 @@
 - Can kick off failover, use --allow-data-loss
 - Switchover - failover except something not wrong
 - Can have up to 5 secondary regions
+- Can do this cross account, neat!
