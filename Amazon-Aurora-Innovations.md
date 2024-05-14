@@ -55,3 +55,13 @@
 - Instant scaling - scale in place in ms by adding more comp resources
 - scaling occurs in fine grained capccity adjustments (0.5 ACUs)
 - No impact due to scaling even when running big workloads
+
+# Manageability - Zero ETl
+
+- Aurora to Redshift
+- Enhanced binlog
+
+# Optimised reads
+
+- When you create an instance an EBS store gets associated with it for ephemeral storage
+- Tiered caching with optimised memory (if you use disk based compute instances)
