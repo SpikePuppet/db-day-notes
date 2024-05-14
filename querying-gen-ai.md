@@ -42,4 +42,14 @@
 
 # pgVector strategies and best practices
 
+- understanding TOAST in postgres
+- TOAST - the oversized attribute storage technique, for storing data larger than 8KB
+- B default, POstgresql TOASTs values over 2KB
+
+- 510-dim 4 byte float vector
+- Means vector data is highly likely to be stored in a TOAST
+- PLAIN - data store inline with table
+- EXTENDED - data stores/compressed when threshold exceeded (pg vector default)
+- EXTERNAL - Data stored in TOAST table when threshold exceeded
+
 # Amazon Aurora features for vector queries
